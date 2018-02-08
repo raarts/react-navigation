@@ -88,7 +88,7 @@ export default class DrawerView extends React.PureComponent {
   };
 
   _renderNavigationView = () => {
-    const details = this.props.descriptors.find(
+    const details = Object.values(this.props.descriptors).find(
       d => d.state.routeName === this.props.navigationConfig.drawerCloseRoute
     );
 
@@ -96,7 +96,8 @@ export default class DrawerView extends React.PureComponent {
     const { state, addListener, dispatch } = this.props.navigation;
     const { routes } = details.state;
 
-    const tabDescriptors = routes.map(route => {
+    const tabDescriptors = {};
+    routes.forEach(route => {
       const getComponent = () =>
         router.getComponentForRouteName(route.routeName);
 
@@ -109,7 +110,7 @@ export default class DrawerView extends React.PureComponent {
         childNavigation,
         this.props.screenProps
       );
-      return {
+      tabDescriptors[route.key] = {
         key: route.key,
         getComponent,
         options,
@@ -133,7 +134,10 @@ export default class DrawerView extends React.PureComponent {
   };
 
   render() {
-    const descriptor = this.props.descriptors.find(
+    if (!this.props.descriptors) {
+      console.log('wtfff', Object.keys(this.props));
+    }
+    const descriptor = Object.values(this.props.descriptors).find(
       d => d.state.routeName === this.props.navigationConfig.drawerCloseRoute
     );
 

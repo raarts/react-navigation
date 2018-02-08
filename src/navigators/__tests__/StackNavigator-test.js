@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 
-import StackNavigator from '../StackNavigator';
+import StackNavigator from '../createStackNavigator';
 
 class HomeScreen extends Component {
   static navigationOptions = ({ navigation }) => ({

@@ -75,10 +75,39 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
       />
     </View>
     <View
-      cardStyle={undefined}
       collapsable={undefined}
-      getScreenDetails={[Function]}
-      headerMode={undefined}
+      descriptors={
+        Object {
+          "Init-id-0-1": Object {
+            "getComponent": [Function],
+            "key": "Init-id-0-1",
+            "navigation": Object {
+              "addListener": [Function],
+              "dispatch": [Function],
+              "goBack": [Function],
+              "navigate": [Function],
+              "pop": [Function],
+              "popToTop": [Function],
+              "push": [Function],
+              "replace": [Function],
+              "setParams": [Function],
+              "state": Object {
+                "key": "Init-id-0-1",
+                "routeName": "Home",
+              },
+            },
+            "options": Object {
+              "gesturesEnabled": true,
+              "headerRight": <View />,
+              "title": "Welcome anonymous",
+            },
+            "state": Object {
+              "key": "Init-id-0-1",
+              "routeName": "Home",
+            },
+          },
+        }
+      }
       index={0}
       layout={
         Object {
@@ -116,19 +145,7 @@ exports[`StackNavigator applies correct values when headerRight is present 1`] =
         }
       }
       rightInterpolator={[Function]}
-      router={
-        Object {
-          "getActionForPathAndParams": [Function],
-          "getComponentForRouteName": [Function],
-          "getComponentForState": [Function],
-          "getPathAndParamsForState": [Function],
-          "getScreenConfig": [Function],
-          "getScreenOptions": [Function],
-          "getStateForAction": [Function],
-        }
-      }
       titleInterpolator={[Function]}
-      transitionConfig={undefined}
     >
       <View
         collapsable={undefined}
@@ -314,10 +331,38 @@ exports[`StackNavigator renders successfully 1`] = `
       />
     </View>
     <View
-      cardStyle={undefined}
       collapsable={undefined}
-      getScreenDetails={[Function]}
-      headerMode={undefined}
+      descriptors={
+        Object {
+          "Init-id-0-0": Object {
+            "getComponent": [Function],
+            "key": "Init-id-0-0",
+            "navigation": Object {
+              "addListener": [Function],
+              "dispatch": [Function],
+              "goBack": [Function],
+              "navigate": [Function],
+              "pop": [Function],
+              "popToTop": [Function],
+              "push": [Function],
+              "replace": [Function],
+              "setParams": [Function],
+              "state": Object {
+                "key": "Init-id-0-0",
+                "routeName": "Home",
+              },
+            },
+            "options": Object {
+              "gesturesEnabled": true,
+              "title": "Welcome anonymous",
+            },
+            "state": Object {
+              "key": "Init-id-0-0",
+              "routeName": "Home",
+            },
+          },
+        }
+      }
       index={0}
       layout={
         Object {
@@ -355,19 +400,7 @@ exports[`StackNavigator renders successfully 1`] = `
         }
       }
       rightInterpolator={[Function]}
-      router={
-        Object {
-          "getActionForPathAndParams": [Function],
-          "getComponentForRouteName": [Function],
-          "getComponentForState": [Function],
-          "getPathAndParamsForState": [Function],
-          "getScreenConfig": [Function],
-          "getScreenOptions": [Function],
-          "getStateForAction": [Function],
-        }
-      }
       titleInterpolator={[Function]}
-      transitionConfig={undefined}
     >
       <View
         collapsable={undefined}

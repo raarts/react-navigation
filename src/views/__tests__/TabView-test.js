@@ -26,7 +26,15 @@ describe('TabBarBottom', () => {
         <TabView
           tabBarComponent={TabBarBottom}
           navigation={navigation}
-          router={router}
+          descriptors={{
+            s1: {
+              navigation: {},
+              options: {},
+              key: 's1',
+              getComponent: () => () => null,
+            },
+          }}
+          navigationConfig={{}}
         />
       )
       .toJSON();
