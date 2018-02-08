@@ -19,14 +19,12 @@ type MyNavScreenProps = {
 
 class MyBackButton extends React.Component<any, any> {
   render() {
-    return (
-      <Button onPress={this._navigateBack} title="Custom Back" />
-    );
+    return <Button onPress={this._navigateBack} title="Custom Back" />;
   }
 
   _navigateBack = () => {
     this.props.navigation.goBack(null);
-  }
+  };
 }
 
 const MyBackButtonWithNavigation = withNavigation(MyBackButton);
@@ -42,7 +40,12 @@ class MyNavScreen extends React.Component<MyNavScreenProps> {
           title="Push a profile screen"
         />
         <Button
-          onPress={() => navigation.navigate('Photos', { name: 'Jane' })}
+          onPress={() =>
+            navigation.navigate({
+              routeName: 'Photos',
+              params: { name: 'Jane' },
+            })
+          }
           title="Navigate to a photos screen"
         />
         <Button
@@ -52,6 +55,18 @@ class MyNavScreen extends React.Component<MyNavScreenProps> {
         <Button onPress={() => navigation.popToTop()} title="Pop to top" />
         <Button onPress={() => navigation.pop()} title="Pop" />
         <Button onPress={() => navigation.goBack(null)} title="Go back" />
+        <Button
+          onPress={() => navigation.push('Profile', { name: 'Jack' })}
+          title="Immediate Profile Navigation"
+        />
+        <Button
+          onPress={() => navigation.pop(1, { immediate: true })}
+          title="Immediate Pop"
+        />
+        <Button
+          onPress={() => navigation.popToTop({ immediate: true })}
+          title="Immediate PopToTop"
+        />
         <StatusBar barStyle="default" />
       </SafeAreaView>
     );
@@ -108,7 +123,7 @@ type MyPhotosScreenProps = {
 class MyPhotosScreen extends React.Component<MyPhotosScreenProps> {
   static navigationOptions = {
     title: 'Photos',
-    headerLeft: <MyBackButtonWithNavigation />
+    headerLeft: <MyBackButtonWithNavigation />,
   };
   _s0: NavigationEventSubscription;
   _s1: NavigationEventSubscription;

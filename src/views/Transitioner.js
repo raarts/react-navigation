@@ -139,7 +139,13 @@ class Transitioner extends React.Component {
           await result;
         }
       }
-      Animated.parallel(animations).start(this._onTransitionEnd);
+      if (nextProps.navigation.state.isTransitioning) {
+        Animated.parallel(animations).start(this._onTransitionEnd);
+      } else {
+        progress.setValue(1);
+        position.setValue(nextProps.navigation.state.index);
+        this._onTransitionEnd();
+      }
     });
   }
 

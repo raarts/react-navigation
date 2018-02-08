@@ -326,11 +326,14 @@ export default (routeConfigs, stackConfig = {}) => {
               routeToPush = navigatedChildRoute;
             }
             if (routeToPush) {
-              return StateUtils.push(state, {
-                ...routeToPush,
-                key: generateKey(),
-                routeName: childRouterName,
-              });
+              return {
+                ...StateUtils.push(state, {
+                  ...routeToPush,
+                  key: generateKey(),
+                  routeName: childRouterName,
+                }),
+                isTransitioning: action.immediate !== true,
+              };
             }
           }
         }
@@ -385,6 +388,7 @@ export default (routeConfigs, stackConfig = {}) => {
             return route;
           }),
           index: action.index,
+          isTransitioning: false,
         };
       }
 
